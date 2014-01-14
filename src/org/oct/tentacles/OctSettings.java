@@ -20,7 +20,7 @@ package org.oct.tentacles;
 import android.os.Bundle;
 import android.preference.Preference;
 
-import com.android.settings.R;
+import org.oct.tentacles.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 public class OctSettings extends SettingsPreferenceFragment {

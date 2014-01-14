@@ -14,7 +14,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="">
-    <!-- Nothing to see here...move on -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="">	
+    <!-- Power Menu --> 
+    <PreferenceScreen
+        android:key="power_menu"
+        android:title="@string/power_menu_title"
+        android:fragment="org.oct.tentacles.PowerMenu" />
 
 </PreferenceScreen>       
