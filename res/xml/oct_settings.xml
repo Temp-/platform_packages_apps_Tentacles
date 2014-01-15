@@ -14,7 +14,18 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="">	
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="">
+    <!-- Themes -->
+    <PreferenceScreen
+        android:id="@+id/themes_settings"
+        android:icon="@drawable/ic_settings_themes"
+        android:title="@string/themes_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </PreferenceScreen>
+ 	
     <!-- Power Menu --> 
     <PreferenceScreen
         android:key="power_menu"

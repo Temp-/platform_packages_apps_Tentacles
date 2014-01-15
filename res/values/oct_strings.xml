@@ -22,4 +22,7 @@
     <string name="power_menu_airplane_title">Airplane mode</string>
     <string name="power_menu_silent_title">Sound panel</string>
     
+    <!-- Themes settings  -->
+    <string name="themes_settings_title">Themes</string>
+    
 </resources>
