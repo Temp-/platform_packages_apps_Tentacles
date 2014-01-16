@@ -25,7 +25,12 @@
             android:targetPackage="com.tmobile.themechooser"
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </PreferenceScreen>
- 	
+
+    <PreferenceScreen
+        android:fragment="org.oct.tentacles.notification.NotificationLightSettings"
+        android:key="led_settings"
+        android:title="@string/led_settings_category_title" />
+
     <!-- Power Menu --> 
     <PreferenceScreen
         android:key="power_menu"
