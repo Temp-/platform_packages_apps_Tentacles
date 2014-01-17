@@ -25,7 +25,17 @@
             android:targetPackage="com.tmobile.themechooser"
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </PreferenceScreen>
-
+    
+    <PreferenceScreen
+        android:key="quick_settings_panel"
+        android:fragment="org.oct.tentacles.quicksettings.QuickSettings"
+        android:title="@string/quick_settings_panel_title" />
+ 
+    <PreferenceScreen
+        android:key="notification_drawer"
+        android:fragment="org.oct.tentacles.quicksettings.NotificationDrawer"
+        android:title="@string/notification_drawer_title" />
+        
     <PreferenceScreen
         android:fragment="org.oct.tentacles.notification.NotificationLightSettings"
         android:key="led_settings"
