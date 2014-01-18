@@ -23,10 +23,6 @@
         android:key="general_section"
         android:title="@string/notification_light_general_title">
 
-        <CheckBoxPreference
-            android:key="pulse_enabled"
-            android:title="@string/notification_pulse_title" />
-
         <org.oct.tentacles.notification.ApplicationLightPreference
             android:key="default"
             android:title="@string/default_string"

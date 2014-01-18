@@ -184,11 +184,6 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
         PreferenceGroup generalPrefs = (PreferenceGroup) prefSet.findPreference("general_section");
         if (generalPrefs != null) {
 
-            // Pulse preference
-            CheckBoxPreference cPref = (CheckBoxPreference) prefSet.findPreference(PULSE_PREF);
-            cPref.setChecked(mLightEnabled);
-            cPref.setOnPreferenceChangeListener(this);
-
             // Default preference
             mDefaultPref = (ApplicationLightPreference) prefSet.findPreference(DEFAULT_PREF);
             mDefaultPref.setAllValues(color, timeOn, timeOff);
