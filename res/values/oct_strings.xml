@@ -244,6 +244,12 @@
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
     
+    <!-- Statusbar Brightness Control -->
+    <string name="enabled">Enabled</string>   
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across status bar</string>
+    <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
+    
    <!-- StatusBar Battery Settings -->
     <string name="battery_icon_title">Battery icon</string>
     <string name="battery_status_icon">Icon</string>
