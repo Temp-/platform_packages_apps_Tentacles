@@ -45,6 +45,12 @@
             android:title="@string/tile_picker_title"
             android:summary="@string/tile_picker_summary"
             android:fragment="org.oct.tentacles.quicksettings.QuickSettingsTiles" />
+            
+        <org.oct.tentacles.SystemSettingCheckBoxPreference
+            android:key="qs_hide_text"
+            android:title="@string/title_qs_hide_text"
+            android:defaultValue="false"
+            android:summary="@string/summary_qs_hide_text" />
 
         <MultiSelectListPreference
             android:key="pref_ring_mode"

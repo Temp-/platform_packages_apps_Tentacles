@@ -277,4 +277,8 @@
     <string name="battery_bolt_color">Bolt charging color</string>
     <string name="battery_text_charging_color">Percentage text charging color</string>
     <string name="battery_style_reset_message">Reset all battery colors?</string>
+    
+    <!-- Smaller QS -->
+    <string name="title_qs_hide_text">Hide text in tile</string>
+    <string name="summary_qs_hide_text">Will allow for more icons per row</string>
 </resources>
