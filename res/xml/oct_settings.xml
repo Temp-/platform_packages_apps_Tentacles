@@ -14,7 +14,12 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"> 
+    <Preference     
+        android:icon="@drawable/ic_settings_oct"
+        android:title="@string/oct_settings_title"
+        android:summary="@string/oct_settings_summary"/>
+       
     <PreferenceCategory
         android:title="@string/theming_category_title">
         

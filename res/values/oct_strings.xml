@@ -15,6 +15,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Oct Settings -->
+    <string name="oct_settings_title">OCTOS CUSTOM SETTINGS</string>
+    <string name="oct_settings_summary">Warning: Tentacles may sting, strangle, and mame!!!</string>
+    
     <!-- Categor titles -->
     <string name="theming_category_title">Theming</string>
     <string name="tweaking_category_title">Tweaking</string>
