@@ -67,6 +67,13 @@
         android:key="power_menu"
         android:title="@string/power_menu_title"
         android:fragment="org.oct.tentacles.PowerMenu" />
+        
+    <!-- Active display -->           
+    <PreferenceScreen        
+        android:key="active_display"        
+        android:fragment="org.oct.tentacles.display.ActiveDisplaySettings"        
+        android:title="@string/ad_settings_title"        
+        android:summary="@string/ad_settings_summary" />
     
     <!-- Clear all button -->
     <CheckBoxPreference
