@@ -281,6 +281,14 @@
     <!-- Smaller QS -->
     <string name="title_qs_hide_text">Hide text in tile</string>
     <string name="summary_qs_hide_text">Will allow for more icons per row</string>
+	
+    <!-- QuickSettings style options -->
+    <string name="quicksettings_tiles_style">Quick Settings style</string>
+    <string name="summary_quicksettings_tiles_style">Show or change Quick Settings style options</string>
+    <string name="quicksettings_tiles_style_additional_options">Additional options</string>
+    <string name="tiles_per_row_title">Tiles per row</string>
+    <string name="tiles_per_row_duplicate_landscape_title">Scale landscape quantity</string>
+    <string name="tiles_per_row_duplicate_landscape_summary">Landscape view doubles tiles per row quantity</string>
     
     <!-- Battery Bar -->
     <string name="battery_bar_title">Battery Bar</string>
