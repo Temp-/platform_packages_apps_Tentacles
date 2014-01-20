@@ -74,6 +74,11 @@
         android:fragment="org.oct.tentacles.display.ActiveDisplaySettings"        
         android:title="@string/ad_settings_title"        
         android:summary="@string/ad_settings_summary" />
+		
+        <PreferenceScreen
+                android:key="screen_recorder"
+                android:title="@string/screen_recorder_title"
+                android:fragment="org.oct.tentacles.display.ScreenRecorderSettings" />
     
     <!-- Clear all button -->
     <CheckBoxPreference
