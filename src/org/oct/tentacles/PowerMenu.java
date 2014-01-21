@@ -31,11 +31,13 @@ public class PowerMenu extends SettingsPreferenceFragment {
 
     private static final String KEY_REBOOT = "power_menu_reboot";
     private static final String KEY_SCREENSHOT = "power_menu_screenshot";
+    private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
     private static final String KEY_AIRPLANE = "power_menu_airplane";
     private static final String KEY_SILENT = "power_menu_silent";
 
     private CheckBoxPreference mRebootPref;
     private CheckBoxPreference mScreenshotPref;
+    private CheckBoxPreference mScreenrecordPref;
     private CheckBoxPreference mAirplanePref;
     private CheckBoxPreference mSilentPref;
 
@@ -52,6 +54,10 @@ public class PowerMenu extends SettingsPreferenceFragment {
         mScreenshotPref = (CheckBoxPreference) findPreference(KEY_SCREENSHOT);
         mScreenshotPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SCREENSHOT_ENABLED, 0) == 1));
+                
+        mScreenrecordPref = (CheckBoxPreference) findPreference(KEY_SCREENRECORD);
+        mScreenrecordPref.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1));
 
         mAirplanePref = (CheckBoxPreference) findPreference(KEY_AIRPLANE);
         mAirplanePref.setChecked((Settings.System.getInt(getContentResolver(),
@@ -71,6 +77,11 @@ public class PowerMenu extends SettingsPreferenceFragment {
             value = mScreenshotPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_SCREENSHOT_ENABLED,
+                    value ? 1 : 0);
+        } else if (preference == mScreenrecordPref) {
+            value = mScreenrecordPref.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
                     value ? 1 : 0);
         } else if (preference == mRebootPref) {
             value = mRebootPref.isChecked();
