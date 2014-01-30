@@ -30,6 +30,7 @@ import static com.android.internal.util.oct.QSConstants.TILE_GPS;
 import static com.android.internal.util.oct.QSConstants.TILE_LOCKSCREEN;
 import static com.android.internal.util.oct.QSConstants.TILE_LTE;
 import static com.android.internal.util.oct.QSConstants.TILE_MOBILEDATA;
+import static com.android.internal.util.oct.QSConstants.TILE_MUSIC;
 import static com.android.internal.util.oct.QSConstants.TILE_NETWORKMODE;
 import static com.android.internal.util.oct.QSConstants.TILE_NFC;
 import static com.android.internal.util.oct.QSConstants.TILE_RINGER;
@@ -132,6 +133,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_WIFI, R.string.title_tile_wifi,
                 "com.android.systemui:drawable/ic_qs_wifi_full_4"));
+         registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_MUSIC, R.string.title_tile_music,
+                "com.android.systemui:drawable/ic_qs_media_play"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_WIFIAP, R.string.title_tile_wifiap,
                 "com.android.systemui:drawable/ic_qs_wifi_ap_on"));
