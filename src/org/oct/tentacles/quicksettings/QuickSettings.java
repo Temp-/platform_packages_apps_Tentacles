@@ -53,7 +53,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String EXP_RING_MODE = "pref_ring_mode";
     private static final String EXP_NETWORK_MODE = "pref_network_mode";
     private static final String EXP_SCREENTIMEOUT_MODE = "pref_screentimeout_mode";
-    private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String GENERAL_SETTINGS = "pref_general_settings";
     private static final String STATIC_TILES = "static_tiles";
     private static final String DYNAMIC_TILES = "pref_dynamic_tiles";
@@ -64,7 +63,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private MultiSelectListPreference mRingMode;
     private ListPreference mNetworkMode;
     private ListPreference mScreenTimeoutMode;
-    private ListPreference mQuickPulldown;
 	private ListPreference mTilesPerRow;
     private PreferenceCategory mGeneralSettings;
     private PreferenceCategory mStaticTiles;
@@ -86,8 +84,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mGeneralSettings = (PreferenceCategory) prefSet.findPreference(GENERAL_SETTINGS);
         mStaticTiles = (PreferenceCategory) prefSet.findPreference(STATIC_TILES);
         mDynamicTiles = (PreferenceCategory) prefSet.findPreference(DYNAMIC_TILES);
-        mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
-
 
         // Add the sound mode
         mRingMode = (MultiSelectListPreference) prefSet.findPreference(EXP_RING_MODE);
@@ -197,12 +193,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver, Settings.System.EXPANDED_NETWORK_MODE, value);
             mNetworkMode.setSummary(mNetworkMode.getEntries()[index]);
             return true;
-        } else if (preference == mQuickPulldown) {
-            int quickPulldownValue = Integer.valueOf((String) newValue);
-            Settings.System.putInt(resolver, Settings.System.QS_QUICK_PULLDOWN,
-                    quickPulldownValue);
-            updatePulldownSummary(quickPulldownValue);
-            return true;
         } else if (preference == mScreenTimeoutMode) {
             int value = Integer.valueOf((String) newValue);
             int index = mScreenTimeoutMode.findIndexOfValue((String) newValue);
@@ -236,20 +226,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             pref.setSummary(summary);
         } else {
             pref.setSummary(defSummary);
-        }
-    }
-
-    private void updatePulldownSummary(int value) {
-        Resources res = getResources();
-
-        if (value == 0) {
-            // quick pulldown deactivated
-            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
-        } else {
-            String direction = res.getString(value == 2
-                    ? R.string.quick_pulldown_summary_left
-                    : R.string.quick_pulldown_summary_right);
-            mQuickPulldown.setSummary(res.getString(R.string.summary_quick_pulldown, direction));
         }
     }
 
