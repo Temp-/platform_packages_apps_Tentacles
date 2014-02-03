@@ -58,6 +58,16 @@
         android:fragment="org.oct.tentacles.navigation.NavigationBarSettings"
         android:title="@string/navigation_bar_title" />
     </PreferenceCategory>
+	
+    <PreferenceCategory
+	android:key="progressbar"
+	android:title="@string/progressbar_title" >
+
+    <PreferenceScreen
+        android:key="progressbar_settings"
+        android:fragment="org.oct.tentacles.progressbar.ProgressBar"
+        android:title="@string/progressbar_title" />
+    </PreferenceCategory>
         
     <PreferenceCategory
         android:title="@string/tweaking_category_title">        
