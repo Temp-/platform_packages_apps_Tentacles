@@ -43,7 +43,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.android.settings.oct.ColorPickerView.OnColorChangedListener;
+import org.oct.tentacles.notification.ColorPickerView.OnColorChangedListener;
 
 import java.util.ArrayList;
 import java.util.IllegalFormatException;
