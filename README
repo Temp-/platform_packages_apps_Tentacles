@@ -1,7 +1,9 @@
-Copyright 2014 - Team-OctOS(Octo-Kat)
-A team that truly believes in open source and community... A rarity these days.
+Team-OctOs established 2013 - Octo-Kat
+A team that truly believes in open source, freedom, and community... A rarity these days.
 
 This is where we keep our unicorn turds, pacman pellets, mario mushrooms(both 1ups and bigs), purple pikmen(because you all know they are the best), link's sword (to have safe travels), angry cat himself, the trololo guy, and THE MUTHA FRACKEN KRAKEN with it's fracken krakeny tenticles and stuff.  So beware, because it will eat your stupid cat whole without even blinking, because it can't blink...  it's A FRACKEN KRAKEN.
+
+But no, really, this is where all of our custom ROM options are held.  Most teams and groups have these options directly in the frameworks or settings.  We wanted to keep our ROM laid out as AOSP would and keep it all unmolested.  To access our special settings you need to click build date under about phone. You won't find these options in the regular ROM settings like every other ROM.  They are fully hidden.  We will not add an option or feature if we can't make it optional to the end user.
 
  __________                 ___          __________     __________ 
 /   ____   \               |   |        /   ____   \   /   _______\
