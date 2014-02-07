@@ -431,4 +431,7 @@
    <string name="progressbar_color_3_title">Color3</string>
    <string name="progressbar_color_4_title">Color4</string>
    <string name="sample_progressbar_text">ProgressBar : Preview</string>
+   
+   <!-- OmniSwitch -->
+   <string name="omniswitch_settings_title">OmniSwitch</string>
 </resources>
