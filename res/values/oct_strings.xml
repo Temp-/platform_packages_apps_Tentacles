@@ -434,4 +434,7 @@
    
    <!-- OmniSwitch -->
    <string name="omniswitch_settings_title">OmniSwitch</string>
+   
+    <!-- About OctOS Strings -->
+    <string name="about_octos_title">About OctOS</string>
 </resources>

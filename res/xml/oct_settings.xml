@@ -19,6 +19,16 @@
         android:icon="@drawable/ic_settings_oct"
         android:title="@string/oct_settings_title"
         android:summary="@string/oct_settings_summary"/>
+
+   <!-- About OctOS -->     
+    <PreferenceScreen
+        android:id="@+id/about_octos"
+        android:title="@string/about_octos_title" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="org.oct.about"
+            android:targetClass="org.oct.about.activities.AboutActivity" />
+    </PreferenceScreen>
        
     <PreferenceCategory
         android:title="@string/theming_category_title">
