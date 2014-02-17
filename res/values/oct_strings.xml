@@ -583,4 +583,7 @@
     <string name="icon_picker_search">Search</string>
     <string name="icon_picker_sms">Messaging</string>
     <string name="icon_picker_twitter">Twitter</string>
+    
+    <!-- Lockscreen battery ring -->
+    <string name="battery_around_lockscreen_ring">Battery around unlock ring</string>
 </resources>

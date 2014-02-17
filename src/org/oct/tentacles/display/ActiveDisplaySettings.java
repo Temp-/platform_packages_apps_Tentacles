@@ -55,7 +55,8 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_BRIGHTNESS = "ad_brightness";
     private static final String KEY_TIMEOUT = "ad_timeout";
     private static final String KEY_THRESHOLD = "ad_threshold";
-    private static final String KEY_TURNOFF_MODE = "ad_turnoff_mode";
+    private static final String KEY_TURNOFF_MODE = "ad_turnoff_mode";	
+    private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
 
     private SwitchPreference mEnabledPref;
     private CheckBoxPreference mShowTextPref;
@@ -70,6 +71,7 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mDisplayTimeout;
     private ListPreference mProximityThreshold;
     private CheckBoxPreference mTurnOffModePref;
+    private CheckBoxPreference mLockRingBattery;
     private AppMultiSelectListPreference mExcludedAppsPref;
 
     @Override
@@ -155,6 +157,12 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
         mTurnOffModePref = (CheckBoxPreference) findPreference(KEY_TURNOFF_MODE);
         mTurnOffModePref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.ACTIVE_DISPLAY_TURNOFF_MODE, 0) == 1));
+				
+        mLockRingBattery = (CheckBoxPreference) findPreference(BATTERY_AROUND_LOCKSCREEN_RING);
+        if (mLockRingBattery != null) {
+            mLockRingBattery.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, 0) == 1);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -230,6 +238,11 @@ public class ActiveDisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.ACTIVE_DISPLAY_TURNOFF_MODE,
                     value ? 1 : 0);
+        } else if (preference == mLockRingBattery) {
+		    value = mLockRingBattery.isChecked();
+			Settings.System.putInt(getContentResolver(),
+                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING,
+					value ? 1 : 0);
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }

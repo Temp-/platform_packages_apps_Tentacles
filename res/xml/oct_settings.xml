@@ -73,6 +73,7 @@
         android:key="lockscreen_targets"
         android:summary="@string/lockscreen_target_summary"
         android:title="@string/lockscreen_target_title" />
+        
     </PreferenceCategory>
 	
     <PreferenceCategory
