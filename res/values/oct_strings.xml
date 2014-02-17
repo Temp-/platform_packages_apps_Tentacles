@@ -417,6 +417,10 @@
 	
     <!-- Status bar double-tap to sleep -->
     <string name="status_bar_double_tap_to_sleep_title">Double-tap to sleep</string>
+
+    <!-- Notification Drawer - Swipe to Switch full screen detection-->
+    <string name="title_full_screen_swipe">Quick Swipe</string>
+    <string name="summary_full_screen_swipe">Swipe empty space on notification shade, or bottom bar, to show Quick Tiles</string>
 	
    <!-- Smooth ProgressBar -->
    <string name="progressbar_title">Custom ProgressBar</string>
