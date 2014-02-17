@@ -17,4 +17,9 @@
         android:entryValues="@array/navigation_bar_height_values"
         android:defaultValue="0"
         android:persistent="false" />
+        
+    <PreferenceScreen
+        android:key="navigation_ring"
+        android:fragment="org.oct.tentacles.lockscreen.NavRing"
+        android:title="@string/navigation_ring_title" />
 </PreferenceScreen>
