@@ -87,7 +87,17 @@
     </PreferenceCategory>
         
     <PreferenceCategory
-        android:title="@string/tweaking_category_title">        
+        android:title="@string/tweaking_category_title">
+
+    <!-- SuperSU -->
+    <PreferenceScreen
+        android:id="@+id/supersu_settings"
+        android:title="@string/supersu_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="eu.chainfire.supersu"
+            android:targetClass="eu.chainfire.supersu.MainActivity" />
+    </PreferenceScreen>        
  
     <!-- Power Menu --> 
     <PreferenceScreen
