@@ -23,6 +23,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.os.UserHandle;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -33,9 +34,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
 
     private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
     private static final String SWIPE_TO_SWITCH_SCREEN_DETECTION = "full_swipe_to_switch_detection";
+	private static final String PRE_COLLAPSE_PANEL = "collapse_panel";
 
     private ListPreference mCollapseOnDismiss;
     private CheckBoxPreference mFullScreenDetection;
+	private CheckBoxPreference mCollapsePanel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(),
                 Settings.System.SWIPE_TO_SWITCH_SCREEN_DETECTION, value ? 1 : 0);
+            return true;
+        } else if (preference == mCollapsePanel) {
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_COLLAPSE_PANEL,
+                    (Boolean) objValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         }
 
