@@ -21,6 +21,12 @@
     <PreferenceCategory
         android:key="pref_general_settings"
         android:title="@string/title_general" >
+        
+    	<CheckBoxPreference
+        	android:key="full_swipe_to_switch_detection"
+        	android:title="@string/title_full_screen_swipe"
+        	android:summary="@string/summary_full_screen_swipe"
+        	android:defaultValue="false" />
 
         <org.oct.tentacles.SystemSettingCheckBoxPreference
             android:key="qs_collapse_panel"

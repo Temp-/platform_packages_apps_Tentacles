@@ -59,6 +59,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String PREF_TILES_PER_ROW = "tiles_per_row";
     private static final String PREF_TILES_PER_ROW_DUPLICATE_LANDSCAPE = "tiles_per_row_duplicate_landscape";
     private static final String HIDE_LABELS = "qs_hide_text";
+    private static final String SWIPE_TO_SWITCH_SCREEN_DETECTION = "full_swipe_to_switch_detection";
 
     private MultiSelectListPreference mRingMode;
     private ListPreference mNetworkMode;
@@ -68,11 +69,20 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private PreferenceCategory mStaticTiles;
     private PreferenceCategory mDynamicTiles;
 	private CheckBoxPreference mDuplicateColumnsLandscape;
+	private CheckBoxPreference mFullScreenDetection;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
         addPreferencesFromResource(R.xml.quick_settings_panel);
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        
+        // Quick swipe
+        mFullScreenDetection = (CheckBoxPreference) findPreference(SWIPE_TO_SWITCH_SCREEN_DETECTION);
+        mFullScreenDetection.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.SWIPE_TO_SWITCH_SCREEN_DETECTION, 0) == 1);
+        mFullScreenDetection.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -204,6 +214,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int index = mTilesPerRow.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver, Settings.System.QUICK_TILES_PER_ROW, value);
             mTilesPerRow.setSummary(mTilesPerRow.getEntries()[index]);
+            return true;
+        } else if (preference == mFullScreenDetection) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.SWIPE_TO_SWITCH_SCREEN_DETECTION, value ? 1 : 0);
             return true;
         }
         return false;
