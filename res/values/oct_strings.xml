@@ -163,7 +163,6 @@
     <string name="dialog_test">Test</string>
     <string name="dialog_delete_title">Delete</string>
     <string name="dialog_delete_message">Remove selected item?</string>
-    <string name="dialog_test_message">Turn the screen off to see the selected notification in action or dismiss this dialog to stop the test</string>
     <string name="dialog_test_button">Dismiss</string>
 
     <!-- Values for the notification light pulse spinners -->
