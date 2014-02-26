@@ -347,7 +347,7 @@
     <string name="ad_threshold_title">Proximity time threshold</string>
     <string name="ad_threshold_summary">Duration the proximity sensor must be covered before Active display is shown</string>
     <string name="ad_sunlight_mode_title">Sunlight mode</string>
-    <string name="ad_sunlight_mode_summary">Invert the colors when in areas with bright light such as direct sunlight.</string>
+    <string name="ad_sunlight_mode_summary">Invert colors when in bright areas such as under direct sunlight</string>
     <string name="ad_customizations_title">Advanced settings</string>
     <string name="ad_excluded_apps_title">Excluded apps</string>
     <string name="ad_excluded_apps_summary">No notifications will be shown for these apps</string>
@@ -359,7 +359,6 @@
     <string name="ad_show_date_summary">Show the date above the clock</string>
     <string name="ad_show_ampm_title">Show AM/PM</string>
     <string name="ad_show_ampm_summary">Show AM/PM indicator when using the 12-hour time format</string>
-    <string name="ad_sunlight_mode_summary">Invert colors when in bright areas such as under direct sunlight</string>
     <string name="ad_turnoff_mode_title">Auto-sleep display</string>
     <string name="ad_turnoff_mode_summary">Put device to sleep again if it was woken by Pocket mode, and is returned to the pocket</string>
     <string name="ad_redisplay_never">Never</string>
@@ -385,8 +384,6 @@
     <string name="ad_pocket_mode_off">Off</string>
     <string name="ad_pocket_mode_notifications">Notifications only</string>
     <string name="ad_pocket_mode_always">Always</string>
-
-    <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
 	
     <!-- Screen recorder -->
     <string name="screen_recorder_record_audio_title">Record audio</string>
