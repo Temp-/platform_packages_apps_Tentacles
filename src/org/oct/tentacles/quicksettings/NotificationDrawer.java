@@ -18,6 +18,7 @@
 package org.oct.tentacles.quicksettings;
 
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -31,8 +32,10 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "NotificationDrawer";
 
+    private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
     private static final String PRE_COLLAPSE_PANEL = "collapse_panel";
 
+    private ListPreference mCollapseOnDismiss;
     private CheckBoxPreference mCollapsePanel;
 
     @Override
@@ -41,11 +44,25 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.notification_drawer);
         PreferenceScreen prefScreen = getPreferenceScreen();
+
+        // Notification drawer
+        int collapseBehaviour = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS,
+                Settings.System.STATUS_BAR_COLLAPSE_IF_NO_CLEARABLE);
+        mCollapseOnDismiss = (ListPreference) findPreference(UI_COLLAPSE_BEHAVIOUR);
+        mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
+        mCollapseOnDismiss.setOnPreferenceChangeListener(this);
+        updateCollapseBehaviourSummary(collapseBehaviour);
     }
 
-
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mCollapsePanel) {
+        if (preference == mCollapseOnDismiss) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS, value);
+            updateCollapseBehaviourSummary(value);
+            return true;            
+        } else if (preference == mCollapsePanel) {
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_COLLAPSE_PANEL,
                     (Boolean) objValue ? 1 : 0, UserHandle.USER_CURRENT);
@@ -53,5 +70,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         }
 
         return false;
+    }
+
+    private void updateCollapseBehaviourSummary(int setting) {
+        String[] summaries = getResources().getStringArray(
+                R.array.notification_drawer_collapse_on_dismiss_summaries);
+        mCollapseOnDismiss.setSummary(summaries[setting]);
     }
 }
