@@ -25,7 +25,8 @@
 
         <Preference
             android:key="custom_carrier_label"
-            android:title="@string/custom_carrier_label_title" />
+            android:title="@string/custom_carrier_label_title" 
+            android:summary="@string/carrier_label_summary" />
 
          <org.oct.tentacles.SystemSettingCheckBoxPreference
             android:key="pref_notification_shortcuts_hide_carrier"

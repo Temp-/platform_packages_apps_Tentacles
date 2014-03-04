@@ -615,6 +615,7 @@
     <!-- Custom Carrier Label Options -->
     <string name="carrier_label_title">Carrier Label Options</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="carrier_label_summary">To hide stock carrier label from lockscreen enter only a "space" in text box.</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="hide_carrier_title">Hide carrier label</string>
